@@ -1,6 +1,11 @@
 import os
 from flask import Flask
 
+if os.path.exists("env.py"):
+    import env
+
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+
 app = Flask(__name__)
 
 
